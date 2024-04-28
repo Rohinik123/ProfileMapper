@@ -1,0 +1,143 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  /* Profile list styles */
+  .profile-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 20px;
+    margin-bottom: 50px;
+  }
+  
+  .profile-card {
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  
+  .profile-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .profile-card h2 {
+    margin: 10px;
+    font-size: 1.5rem;
+  }
+  
+  .profile-card p {
+    margin: 10px;
+    font-size: 1rem;
+  }
+  
+  /* Profile details styles */
+  .profile-details {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 20px;
+    align-items: center;
+    margin-bottom: 50px;
+  }
+  
+  .profile-info {
+    margin: 10px;
+  }
+  
+  .profile-name {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  .profile-description {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+  
+  .profile-contact {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+  
+  .profile-map {
+    height: 400px;
+    width: 100%;
+  }
+  
+  /* Map styles */
+  .map-container {
+    height: 400px;
+    width: 100%;
+  }
+  
+  @media (max-width: 768px) {
+    /* Profile list styles for small screens */
+    .profile-list {
+      grid-template-columns: 1fr;
+    }
+  
+    .profile-card {
+      margin-bottom: 30px;
+    }
+  
+    /* Profile details styles for small screens */
+    .profile-details {
+      grid-template-columns: 1fr;
+    }
+  
+    .profile-info {
+      margin: 20px;
+    }
+  
+    .profile-map {
+      height: 300px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    /* Profile list styles for extra small screens */
+    .profile-card {
+      margin-bottom: 20px;
+    }
+  
+    /* Profile details styles for extra small screens */
+    .profile-map {
+      height: 200px;
+    }
+  }
+
+  .map-container {
+    height: 400px;
+    width: 800px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+  
+  .map-container iframe {
+    border: 0;
+  }
+
+  #map-container {
+    height: 400px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  @media (max-width: 768px) {
+    #map-container {
+      height: 300px;
+    }
+  }
