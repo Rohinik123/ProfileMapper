@@ -29,3 +29,18 @@
   .profile-card button:hover {
     background-color: #eee;
   }
+
+  .profile-card button {
+    background-color: rgb(17, 13, 13);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-left: 5px;
+  }
+  
+  .profile-card button:hover {
+    background-color: darkred;
+  }

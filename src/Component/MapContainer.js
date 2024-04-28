@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
 import "./MapContainer.css";
+import ProfileCard from "./Profilecard";
 
 const profiles = [
   { id: 1, latitude: 37.7749, longitude: -122.4194 },
@@ -14,10 +15,6 @@ const MapContainer = ({ profiles }) => {
   const [zoom, setZoom] = useState(12);
   const [filteredProfiles, setFilteredProfiles] = useState(profiles);
 
-  const onLoad = (map) => {
-    setMap(map);
-  };
-
   const mapContainerStyle = {
     height: "400px",
     width: "800px",
@@ -30,6 +27,12 @@ const MapContainer = ({ profiles }) => {
     );
     setFilteredProfiles(filtered);
   };
+
+  const handleDeleteProfile = (id) => {
+    const updatedProfiles = profiles.filter((profile) => profile.id !== id);
+    setFilteredProfiles(updatedProfiles);
+  };
+
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
       (position) => {
@@ -54,12 +57,21 @@ const MapContainer = ({ profiles }) => {
           mapContainerStyle={mapContainerStyle}
           center={center}
           zoom={zoom}
-          onLoad={onLoad}
+          onLoad={(map) => {
+            setMap(map);
+          }}
         >
           {filteredProfiles.map((profile) => (
             <Marker
               key={profile.id}
               position={{ lat: profile.latitude, lng: profile.longitude }}
+            />
+          ))}
+          {filteredProfiles.map((profile) => (
+            <ProfileCard
+              key={profile.id}
+              profile={profile}
+              onDelete={handleDeleteProfile}
             />
           ))}
         </GoogleMap>

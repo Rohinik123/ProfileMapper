@@ -1,8 +1,9 @@
 import React from "react";
 import { useState } from "react";
 import "./ProfileCard.css";
+import MapContainer from "./MapContainer";
 
-const ProfileCard = ({ profile }) => {
+const ProfileCard = ({ profile, onDelete }) => {
   const [summary, setSummary] = useState(false);
   return (
     <div className="profile-card">
@@ -11,6 +12,7 @@ const ProfileCard = ({ profile }) => {
 
       <button onClick={() => setSummary(!summary)}>Summary</button>
       {summary && <p>{profile.description}</p>}
+      <button onClick={() => onDelete(profile.id)}>Delete</button>
     </div>
   );
 };

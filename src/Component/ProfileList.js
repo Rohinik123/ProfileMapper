@@ -3,7 +3,7 @@ import ProfileDatas from "../ProfileDatas.json";
 import ProfileCard from "./Profilecard";
 import "./ProfileList.css";
 
-const ProfileList = () => {
+const ProfileList = ({ profiles }) => {
   const [profilesData, setProfilesData] = useState([]);
   const [filteredProfiles, setFilteredProfiles] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
